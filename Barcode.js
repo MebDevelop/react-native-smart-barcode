@@ -6,10 +6,9 @@
  */
 
 
-import React, {
-    PropTypes,
-    Component,
-} from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
     View,
     requireNativeComponent,
@@ -21,7 +20,7 @@ import {
 const BarcodeManager = Platform.OS == 'ios' ? NativeModules.Barcode : NativeModules.CaptureModule
 
 
-export default class Barcode extends Component {
+export default class Barcode extends React.Component {
 
     static defaultProps = {
         barCodeTypes: Object.values(BarcodeManager.barCodeTypes),
